@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Perfect Holiday Companion - Best Beach Holidays</title>
+    <title>Best Beach Holidays - Your Perfect Getaway</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Quicksand', sans-serif;
         }
 
         body {
-            background: #f0f8ff;
-            color: #333;
+            background: linear-gradient(to bottom right, #f8f9fa, #e3f2fd);
+            color: #2d3436;
             line-height: 1.6;
         }
 
@@ -27,24 +28,33 @@
         .header {
             text-align: center;
             margin-bottom: 3rem;
+            padding: 2rem 0;
         }
 
         .subtitle {
             color: #2c5282;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         .main-title {
             color: #1a365d;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 400;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         .description {
             color: #4a5568;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.8;
         }
 
         .services-grid {
@@ -54,14 +64,17 @@
         }
 
         .service-card {
-            background: white;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
             padding: 2rem;
             text-align: center;
             transition: transform 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
         }
 
         .card-image {
@@ -72,58 +85,74 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            opacity: 0.2;
+            opacity: 0.15;
             z-index: 1;
         }
 
         .card-content {
             position: relative;
             z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1rem;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
             color: #2b6cb0;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
         }
 
         .service-title {
             color: #2b6cb0;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 700;
         }
 
         .service-description {
             color: #4a5568;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            flex-grow: 1;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: #2b6cb0;
+            padding: 1rem 2rem;
+            background: linear-gradient(to right, #2b6cb0, #4299e1);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11);
+            margin-top: auto;
         }
 
         .cta-button:hover {
-            background: #1a4d8c;
+            background: linear-gradient(to right, #1a4d8c, #2b6cb0);
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(50, 50, 93, 0.2);
         }
 
         .articles-section {
             text-align: center;
             margin: 4rem 0;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         }
 
         .disclaimer {
@@ -131,13 +160,23 @@
             font-size: 0.8rem;
             color: #666;
             margin-top: 3rem;
-            padding: 1rem;
-            border-top: 1px solid #ddd;
+            padding: 2rem;
+            border-top: 1px solid #eee;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
         }
 
         @media (max-width: 768px) {
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .service-card {
+                min-height: 350px;
             }
         }
     </style>
@@ -145,18 +184,18 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="subtitle">Your Journey Starts Here</div>
+            <div class="subtitle">Begin Your Coastal Adventure</div>
             <h1 class="main-title">Plan Your Perfect Beach Holiday</h1>
             <p class="description">
-                Discover everything you need for your dream vacation - from flights and hotels to unforgettable experiences 
-                and travel essentials. Start planning your perfect getaway today!
+                Discover everything you need for your sun-kissed escape! From tropical getaways to cozy staycations, 
+                we've curated the best resources to make your beach dreams a reality. Start your journey today!
             </p>
         </div>
 
         <div class="services-grid">
             <!-- Trip.com Card -->
             <div class="service-card">
-                <div class="card-image" style="background-image: url('https://via.placeholder.com/400x300/2b6cb0/ffffff?text=Trip.com+Image')"></div>
+                <div class="card-image" style="background-image: url('placeholder-trip.jpg')"></div>
                 <div class="card-content">
                     <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
@@ -171,7 +210,7 @@
 
             <!-- On the Beach Card -->
             <div class="service-card">
-                <div class="card-image" style="background-image: url('https://via.placeholder.com/400x300/2b6cb0/ffffff?text=On+the+Beach+Image')"></div>
+                <div class="card-image" style="background-image: url('placeholder-onthebeach.jpg')"></div>
                 <div class="card-content">
                     <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9l-4.172-4.173m0 0l-4.172-4.172m4.172 4.172L12 13.414"/>
@@ -186,7 +225,7 @@
 
             <!-- Get Your Guide Card -->
             <div class="service-card">
-                <div class="card-image" style="background-image: url('https://via.placeholder.com/400x300/2b6cb0/ffffff?text=GYG+Image')"></div>
+                <div class="card-image" style="background-image: url('placeholder-gyg.jpg')"></div>
                 <div class="card-content">
                     <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
@@ -201,7 +240,7 @@
 
             <!-- Amazon Travel Gear Card -->
             <div class="service-card">
-                <div class="card-image" style="background-image: url('https://via.placeholder.com/400x300/2b6cb0/ffffff?text=Travel+Gear+Image')"></div>
+                <div class="card-image" style="background-image: url('placeholder-amazon.jpg')"></div>
                 <div class="card-content">
                     <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
@@ -216,17 +255,18 @@
         </div>
 
         <div class="articles-section">
-            <h2>Explore More Beach Holiday Guides</h2>
-            <p>Discover expert tips and destination reviews on our blog</p>
-            <a href="https://travels-101.com/category/beach-holidays" class="cta-button" style="margin-top: 1rem;" target="_blank">
-                Visit Our Travel Blog
+            <h2 style="color: #2b6cb0; margin-bottom: 1rem;">Explore Beach Holiday Guides</h2>
+            <p style="color: #4a5568; margin-bottom: 1.5rem; font-size: 1.1rem;">
+                Discover expert tips and destination reviews on our blog
+            </p>
+            <a href="https://travels-101.com/category/beach-holidays" class="cta-button" target="_blank">
+                Visit Travel Blog
             </a>
         </div>
 
         <div class="disclaimer">
-            *Disclosure: This page contains affiliate links. If you make a purchase through these links, 
-            we may earn a small commission at no extra cost to you. We only recommend services and products 
-            we trust. Thank you for supporting our site!
+            *Disclosure: We partner with amazing companies to bring you these offers. When you purchase through our links, 
+            we may earn a commission at no extra cost to you. Thank you for supporting our beach-loving community!
         </div>
     </div>
 </body>

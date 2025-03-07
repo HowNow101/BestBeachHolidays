@@ -179,6 +179,46 @@
                 min-height: 350px;
             }
         }
+
+        .articles-section {
+    position: relative;
+    overflow: hidden;
+    margin: 4rem 0;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2; /* Adjust transparency here (0-1) */
+    z-index: 1;
+}
+
+.section-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* For better text readability */
+.section-content h2 {
+    color: #2b6cb0;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+.section-content p {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
     </style>
 </head>
 <body>
@@ -255,14 +295,14 @@
         </div>
 
         <div class="articles-section">
-            <h2 style="color: #2b6cb0; margin-bottom: 1rem;">Explore Beach Holiday Guides</h2>
-            <p style="color: #4a5568; margin-bottom: 1.5rem; font-size: 1.1rem;">
-                Discover expert tips and destination reviews on our blog
-            </p>
-            <a href="https://travels-101.com/category/beach-holidays" class="cta-button" target="_blank">
-                Visit Travel Blog
-            </a>
-        </div>
+    <div class="section-bg-image" style="background-image: url('images/your-blog-bg.jpg')"></div>
+    <div class="section-content">
+        <h2>Explore Beach Holiday Guides</h2>
+        <p>Discover expert tips and destination reviews on our blog</p>
+        <a href="https://travels-101.com/category/beach-holidays" class="cta-button" target="_blank">
+            Visit Travel Blog
+        </a>
+    </div>
 
         <div class="disclaimer">
             *Disclosure: We partner with amazing companies to bring you these offers. When you purchase through our links, 
